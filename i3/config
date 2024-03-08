@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
-# How to update: cp ~/personal/repos/dotfiles/i3/config ~/.config/i3
+# How to update: cp ~/repos/dotfiles/i3/config ~/.config/i3
 
 # --- Preconfigured Options --- #
 set $mod Mod4
@@ -40,7 +40,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty --config ~/personal/repos/dotfiles/kitty.conf
+bindsym $mod+Return exec kitty --config ~/repos/dotfiles/kitty.conf
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -179,13 +179,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# How to update: cp ~/personal/repos/dotfiles/i3/config ~/.config/i3
+
+# Disable Logitech Mouse Acceleration.
+exec --no-startup-id "xinput set-prop 20 306 0, 1"
 
 # Random Wallpapers.
-exec --no-startup-id "~/personal/scripts/wallpapers.sh"
+exec --no-startup-id "~/repos/dotfiles/wallpapers.sh"
 
 # Picom Startup (For transparent terminal).
-exec --no-startup-id picom --config ~/personal/repos/dotfiles/picom.conf
+exec_always --no-startup-id "picom --config ~/repos/dotfiles/picom.conf"
+
+# Flameshot Keybind.
+bindsym Print exec flameshot gui

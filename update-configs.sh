@@ -16,7 +16,7 @@ DUNST_CFG_SRC="$HOME/repos/dotfiles/dunstrc"
 DUNST_CFG_DEST="/usr/local/etc/xdg/dunst/dunstrc"
 if [ -n "$(diff "$DUNST_CFG_SRC" "$DUNST_CFG_DEST")" ]; then
 	echo "Dunst Config Updated. Copying Changes."
-	cp "$DUNST_CFG_SRC" "$DUNST_CFG_DEST"
+	sudo cp "$DUNST_CFG_SRC" "$DUNST_CFG_DEST"
 else 
 	echo "No changes in Dunst config. Skipping."
 fi

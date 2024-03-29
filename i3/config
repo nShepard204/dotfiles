@@ -191,7 +191,7 @@ gaps inner 10px
 ########################
 
 # Disable Logitech Mouse Acceleration.
-exec_always --no-startup-id "xinput set-prop \\"Logitech USB Receiver Mouse\\" \\"libinput Accel Profile Enabled\\" \\"0 1\\""
+exec_always --no-startup-id xinput set-prop "Logitech USB Receiver Mouse" "libinput Accel Profile Enabled" 0 1
 
 # Random Wallpapers.
 exec_always "~/repos/dotfiles/wallpapers.sh"
